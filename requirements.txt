@@ -1,0 +1,22 @@
+# local package
+-e .
+
+# external requirements
+click
+Sphinx
+coverage
+black
+python-dotenv>=0.5.1
+pandas
+numpy
+openpyxl
+rich
+icecream
+tqdm
+nbconvert[webpdf]
+tox
+pytest
+pytest-sugar
+
+# backwards compatibility
+pathlib2
