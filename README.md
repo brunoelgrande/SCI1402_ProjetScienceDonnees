@@ -1,6 +1,6 @@
-# SCI1402ProjetsScienceDonnees
+# SCI1402 Projet en Science des Données
 
-Analyse de la demande en électricité au Québec dans le cadre du projet intégrateur du cours SCI1402 menant à l'obtention du certificat en science des données de la TELUQ
+Analyse de la demande en électricité au Québec dans le cadre du projet intégrateur du cours [SCI1402](https://www.teluq.ca/site/etudes/offre/cours/TELUQ/SCI%201402/) menant à l'obtention du [certificat en science des données de la TELUQ](https://www.teluq.ca/site/etudes/offre/prog/certificat-en-science-des-donnees/)
 
 _**Automne 2023**_
 
@@ -14,7 +14,7 @@ Ces données serviront à produire un modèle d’apprentissage machine adapté 
 
 Finalement, j'utiliserai un cadre d'application (_app framwork_) interactif permettant à un utilisateur d’interagir avec certains paramètres du modèle avec d'effectuer des prévisions à court terme sur la prévision de demande électrique, de même que d'en visualiser les résultats. Un exemple de ce cadre pourrait être la plate-forme [Streamlit](https://streamlit.io/).
 
-## Project Organization
+## Organisation du projet
 
     ├── LICENSE
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
