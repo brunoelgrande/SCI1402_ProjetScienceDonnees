@@ -20,7 +20,7 @@ Finalement, j'utiliserai un cadre d'application (_app framwork_) interactif perm
 
 Données historiques de demande en MW importées du [site d'Hydro-Québec](https://www.hydroquebec.com/documents-donnees/donnees-ouvertes/historique-demande-electricite-quebec/).
 
-![Demande électrique pour les années importées](../reports/figures/historique_demande_HQ.png)
+![Demande électrique pour les années importées](https://raw.githubusercontent.com/brunoelgrande/SCI1402_ProjetScienceDonnees/main/reports/figures/historique_demande_HQ.png)
 
 ## Organisation du projet
 

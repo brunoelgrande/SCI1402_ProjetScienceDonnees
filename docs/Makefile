@@ -42,7 +42,10 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 # Créer la documentation html à la racine de docs pour utilisation de GithubPages
+## Copie du README à la racine
+## Compilation en html
 html:
+	cp ../README.md README.md
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."

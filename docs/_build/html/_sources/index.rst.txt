@@ -10,7 +10,8 @@ SCI1402 Projet en science de Donnees - Documentation
    :maxdepth: 2
    :caption: Table des matières :
 
-   resume-projet.md
+
+   README.md
    demarrage.md
    commandes.md
    test.md
