@@ -21,6 +21,7 @@ pytest-sugar
 matplotlib
 seaborn
 pyarrow
+myst-parser
 
 # backwards compatibility
 pathlib2

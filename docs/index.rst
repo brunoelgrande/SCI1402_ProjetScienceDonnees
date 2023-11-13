@@ -6,12 +6,12 @@
 SCI1402 Projet en science de Donnees - Documentation
 ====================================================
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
+   :caption: Table des matières :
 
-   demarrage
-   commandes
-   test
+   resume-projet.md
+   demarrage.md
+   commandes.md
+   test.md
 

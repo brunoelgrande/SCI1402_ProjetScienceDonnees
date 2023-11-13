@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>SCI1402 Projet en Science des Données &#8212; SCI1402ProjetsScienceDonnees 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=514cf933" />
+    
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Démarrage" href="demarrage.html" />
+    <link rel="prev" title="SCI1402 Projet en science de Donnees - Documentation" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="demarrage.html" title="Démarrage"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="SCI1402 Projet en science de Donnees - Documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SCI1402ProjetsScienceDonnees 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">SCI1402 Projet en Science des Données</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="sci1402-projet-en-science-des-donnees">
+<h1>SCI1402 Projet en Science des Données<a class="headerlink" href="#sci1402-projet-en-science-des-donnees" title="Link to this heading">¶</a></h1>
+<p>Analyse de la demande en électricité au Québec dans le cadre du projet intégrateur du cours <a class="reference external" href="https://www.teluq.ca/site/etudes/offre/cours/TELUQ/SCI%201402/">SCI1402</a> menant à l’obtention du <a class="reference external" href="https://www.teluq.ca/site/etudes/offre/prog/certificat-en-science-des-donnees/">certificat en science des données de la TELUQ</a></p>
+<p><em><strong>Automne 2023</strong></em></p>
+<section id="objectifs">
+<h2>Objectifs<a class="headerlink" href="#objectifs" title="Link to this heading">¶</a></h2>
+<p>Le but de ce projet sera défini en trois étapes principales.</p>
+<p>Tout d’abord, il sera requis d’effectuer l’agrégation, le nettoyage et l’analyse des données disponibles à propos de la demande en électricité des Québécois. Idéalement, ces données seront mises à jour en continu dans un pipeline de données (<em>data pipeline</em>), de façon automatisée.</p>
+<p>Ces données serviront à produire un modèle d’apprentissage machine adapté aux données temporelles (<em>time series</em>), pour effectuer des prévisions de la demande électrique dans le futur à court terme. Plusieurs options de modèles seront évaluées dans cette étape, afin de déterminer une option offrant des résultats répondant à nos besoins de prévisions et visualisations.</p>
+<p>Finalement, j’utiliserai un cadre d’application (<em>app framwork</em>) interactif permettant à un utilisateur d’interagir avec certains paramètres du modèle avec d’effectuer des prévisions à court terme sur la prévision de demande électrique, de même que d’en visualiser les résultats. Un exemple de ce cadre pourrait être la plate-forme <a class="reference external" href="https://streamlit.io/">Streamlit</a>.</p>
+</section>
+<section id="donnees">
+<h2>Données<a class="headerlink" href="#donnees" title="Link to this heading">¶</a></h2>
+<section id="demande-electrique-horaire-pour-l-annee-2019-et-les-suivantes">
+<h3>Demande électrique horaire pour l’année 2019 et les suivantes<a class="headerlink" href="#demande-electrique-horaire-pour-l-annee-2019-et-les-suivantes" title="Link to this heading">¶</a></h3>
+<p>Données historiques de demande en MW importées du <a class="reference external" href="https://www.hydroquebec.com/documents-donnees/donnees-ouvertes/historique-demande-electricite-quebec/">site d’Hydro-Québec</a>.</p>
+<p><img alt="Demande électrique pour les années importées" src="_images/historique_demande_HQ.png" /></p>
+</section>
+</section>
+<section id="organisation-du-projet">
+<h2>Organisation du projet<a class="headerlink" href="#organisation-du-projet" title="Link to this heading">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>├── LICENSE
+├── Makefile           &lt;- Makefile with commands like `make data` or `make train`
+├── README.md          &lt;- The top-level README for developers using this project.
+├── data
+│   ├── external       &lt;- Data from third party sources.
+│   ├── interim        &lt;- Intermediate data that has been transformed.
+│   ├── processed      &lt;- The final, canonical data sets for modeling.
+│   └── raw            &lt;- The original, immutable data dump.
+│
+├── docs               &lt;- A default Sphinx project; see sphinx-doc.org for details
+│
+├── models             &lt;- Trained and serialized models, model predictions, or model summaries
+│
+├── notebooks          &lt;- Jupyter notebooks. Naming convention is a number (for ordering),
+│                         the creator&#39;s initials, and a short `-` delimited description, e.g.
+│                         `1.0-jqp-initial-data-exploration`.
+│
+├── references         &lt;- Data dictionaries, manuals, and all other explanatory materials.
+│
+├── reports            &lt;- Generated analysis as HTML, PDF, LaTeX, etc.
+│   └── figures        &lt;- Generated graphics and figures to be used in reporting
+│
+├── requirements.txt   &lt;- The requirements file for reproducing the analysis environment, e.g.
+│                         generated with `pip freeze &gt; requirements.txt`
+│
+├── setup.py           &lt;- makes project pip installable (pip install -e .) so src can be imported
+├── src                &lt;- Source code for use in this project.
+│   ├── __init__.py    &lt;- Makes src a Python module
+│   │
+│   ├── data           &lt;- Scripts to download or generate data
+│   │   └── make_dataset.py
+│   │
+│   ├── features       &lt;- Scripts to turn raw data into features for modeling
+│   │   └── build_features.py
+│   │
+│   ├── models         &lt;- Scripts to train models and then use trained models to make
+│   │   │                 predictions
+│   │   ├── predict_model.py
+│   │   └── train_model.py
+│   │
+│   └── visualization  &lt;- Scripts to create exploratory and results oriented visualizations
+│       └── visualize.py
+│
+└── tox.ini            &lt;- tox file with settings for running tox; see tox.readthedocs.io
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">SCI1402 Projet en Science des Données</a><ul>
+<li><a class="reference internal" href="#objectifs">Objectifs</a></li>
+<li><a class="reference internal" href="#donnees">Données</a><ul>
+<li><a class="reference internal" href="#demande-electrique-horaire-pour-l-annee-2019-et-les-suivantes">Demande électrique horaire pour l’année 2019 et les suivantes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#organisation-du-projet">Organisation du projet</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="index.html"
+                          title="previous chapter">SCI1402 Projet en science de Donnees - Documentation</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="demarrage.html"
+                          title="next chapter">Démarrage</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/resume-projet.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="demarrage.html" title="Démarrage"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="SCI1402 Projet en science de Donnees - Documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">SCI1402ProjetsScienceDonnees 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">SCI1402 Projet en Science des Données</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>
