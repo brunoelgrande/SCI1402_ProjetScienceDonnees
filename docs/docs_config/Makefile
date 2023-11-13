@@ -5,7 +5,7 @@
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
-BUILDDIR      = _build
+BUILDDIR      = ../_build
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -41,8 +41,9 @@ help:
 clean:
 	-rm -rf $(BUILDDIR)/*
 
+# Créer la documentation html à la racine de docs pour utilisation de GithubPages
 html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) ..
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 

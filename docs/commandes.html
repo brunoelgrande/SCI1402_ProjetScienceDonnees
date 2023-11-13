@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Commands &#8212; SCI1402ProjetsScienceDonnees 0.1 documentation</title>
+    <title>Commandes &#8212; SCI1402ProjetsScienceDonnees 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css?v=514cf933" />
     
@@ -15,7 +15,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Getting started" href="getting-started.html" /> 
+    <link rel="next" title="Tests" href="test.html" />
+    <link rel="prev" title="Démarrage" href="demarrage.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -24,10 +25,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="getting-started.html" title="Getting started"
+          <a href="test.html" title="Tests"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="demarrage.html" title="Démarrage"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">SCI1402ProjetsScienceDonnees 0.1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Commands</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Commandes</a></li> 
       </ul>
     </div>  
 
@@ -36,15 +40,14 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="commands">
-<h1>Commands<a class="headerlink" href="#commands" title="Link to this heading">¶</a></h1>
-<p>The Makefile contains the central entry points for common tasks related to this project.</p>
-<section id="syncing-data-to-s3">
-<h2>Syncing data to S3<a class="headerlink" href="#syncing-data-to-s3" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><cite>make sync_data_to_s3</cite> will use <cite>aws s3 sync</cite> to recursively sync files in <cite>data/</cite> up to <cite>s3://[OPTIONAL] your-bucket-for-syncing-data (do not include ‘s3://’)/data/</cite>.</p></li>
-<li><p><cite>make sync_data_from_s3</cite> will use <cite>aws s3 sync</cite> to recursively sync files from <cite>s3://[OPTIONAL] your-bucket-for-syncing-data (do not include ‘s3://’)/data/</cite> to <cite>data/</cite>.</p></li>
-</ul>
+  <section id="commandes">
+<h1>Commandes<a class="headerlink" href="#commandes" title="Link to this heading">¶</a></h1>
+<p>Le fichier Makefile permet de centraliser tous les points d’entrées pour réaliser les tâches du projet.</p>
+<section id="traitement-des-donnees-d-entrees">
+<h2>Traitement des données d’entrées<a class="headerlink" href="#traitement-des-donnees-d-entrees" title="Link to this heading">¶</a></h2>
+<p>Utilisation de la commande</p>
+<p><cite>make date</cite></p>
+<p>pour créer les données d’entrées et/ou mettre à jour.</p>
 </section>
 </section>
 
@@ -58,8 +61,8 @@
   <div>
     <h3><a href="index.html">Table of Contents</a></h3>
     <ul>
-<li><a class="reference internal" href="#">Commands</a><ul>
-<li><a class="reference internal" href="#syncing-data-to-s3">Syncing data to S3</a></li>
+<li><a class="reference internal" href="#">Commandes</a><ul>
+<li><a class="reference internal" href="#traitement-des-donnees-d-entrees">Traitement des données d’entrées</a></li>
 </ul>
 </li>
 </ul>
@@ -67,13 +70,18 @@
   </div>
   <div>
     <h4>Previous topic</h4>
-    <p class="topless"><a href="getting-started.html"
-                          title="previous chapter">Getting started</a></p>
+    <p class="topless"><a href="demarrage.html"
+                          title="previous chapter">Démarrage</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="test.html"
+                          title="next chapter">Tests</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/commands.rst.txt"
+      <li><a href="_sources/commandes.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -98,10 +106,13 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="getting-started.html" title="Getting started"
+          <a href="test.html" title="Tests"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="demarrage.html" title="Démarrage"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">SCI1402ProjetsScienceDonnees 0.1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Commands</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Commandes</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
