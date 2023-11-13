@@ -14,6 +14,14 @@ Ces données serviront à produire un modèle d’apprentissage machine adapté 
 
 Finalement, j'utiliserai un cadre d'application (_app framwork_) interactif permettant à un utilisateur d’interagir avec certains paramètres du modèle avec d'effectuer des prévisions à court terme sur la prévision de demande électrique, de même que d'en visualiser les résultats. Un exemple de ce cadre pourrait être la plate-forme [Streamlit](https://streamlit.io/).
 
+## Données
+
+### Demande électrique horaire pour l'année 2019 et le suivantes
+
+Données historiques de demande en MW importées du [site d'Hydro-Québec](https://www.hydroquebec.com/documents-donnees/donnees-ouvertes/historique-demande-electricite-quebec/).
+
+![Demande électrique pour les années importées](/reports/figures/historique_demande_HQ.png)
+
 ## Organisation du projet
 
     ├── LICENSE
