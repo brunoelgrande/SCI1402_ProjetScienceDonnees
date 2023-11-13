@@ -16,7 +16,7 @@ Finalement, j'utiliserai un cadre d'application (_app framwork_) interactif perm
 
 ## Données
 
-### Demande électrique horaire pour l'année 2019 et le suivantes
+### Demande électrique horaire pour l'année 2019 et les suivantes
 
 Données historiques de demande en MW importées du [site d'Hydro-Québec](https://www.hydroquebec.com/documents-donnees/donnees-ouvertes/historique-demande-electricite-quebec/).
 
