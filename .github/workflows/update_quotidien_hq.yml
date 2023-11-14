@@ -1,9 +1,9 @@
 name: MAJ quotidienne demande hq
 
 on:
-  push:
   schedule:
-    - cron: "30 1,8 * * *" # “At 01:30.”
+    - cron: "30 3 * * *" # “At 01:30.”
+    - cron: "30 15 * * *" # “At 01:30.”
 
 jobs:
   build:
@@ -33,7 +33,7 @@ jobs:
           locale -c -k LC_NUMERIC
           localectl status
 
-      - name: execute python script # run main.py
+      - name: execute python script
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
         run: python src/data/quotidien_demande_hq.py
