@@ -5,6 +5,7 @@
 click
 Sphinx
 coverage
+httpx
 black
 jupyter-black
 python-dotenv>=0.5.1

@@ -49,7 +49,7 @@ def creation_grap_hist_HQ_import(dfs, **kwargs) -> None:
     # Si nous voulons sauver le graph
 
     if file_to_save := kwargs.get("file_to_save", False):
-        print(f"Sauvegardons le fichier : {file_to_save}")
+        print(f"Sauvegardons le graphique : {file_to_save}\n")
         plt.savefig(fname=file_to_save, dpi=300)
 
     else:
@@ -80,7 +80,7 @@ def correction_donnes_hist_HQ_import(dfs) -> None:
 
                 print("Après Correction : ")
                 print(df.index[i], df.index[i + 1], sep="\n")
-                print("#" * 20)
+                print("#" * 20, "\n")
 
                 dfs[index_dfs] = df.copy()
 
@@ -134,3 +134,7 @@ def import_complet_donnees_historiques_HQ() -> None:
     print(
         f"Import de {len(dfs)} fichier de données de demande d'életricité d'HQ terminé."
     )
+
+
+if __name__ == "__main__":
+    import_complet_donnees_historiques_HQ()
