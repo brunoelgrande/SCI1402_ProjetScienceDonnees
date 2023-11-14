@@ -6,7 +6,7 @@ from datetime import date
 import locale
 from pathlib import Path
 
-locale.setlocale(locale.LC_ALL, "fr_CA")
+locale.setlocale(locale.LC_ALL, "fr_CA.UTF-8")
 
 import matplotlib.pyplot as plt
 

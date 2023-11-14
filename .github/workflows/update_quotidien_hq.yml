@@ -1,6 +1,7 @@
 name: MAJ quotidienne demande hq
 
 on:
+  push:  # pour test
   schedule:
     - cron: '30 3 * * *' # At 01:30.
     - cron: '30 15 * * *' # At 01:30.
