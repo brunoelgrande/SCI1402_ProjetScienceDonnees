@@ -1,4 +1,4 @@
-name: run update_quotidien_demande_hq
+name: MAJ quotidienne demande hq
 
 on:
   schedule:
