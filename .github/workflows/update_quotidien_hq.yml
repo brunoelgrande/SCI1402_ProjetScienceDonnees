@@ -1,8 +1,8 @@
 name: MAJ quotidienne demande hq
 
 on:
+  push:
   schedule:
-    - push:
     - cron: "30 1,8 * * *" # “At 01:30.”
 
 jobs:
