@@ -20,7 +20,7 @@ def update_demande_quotidienne_HQ():
     path_to_interim_data = os.path.join(Path(__file__).parents[2], "data/interim/")
     path_to_img = os.path.join(Path(__file__).parents[2], "reports/figures/")
     file_parquet = "quotidien_demande_HQ.parquet"
-    file_image = "quotidient_demande_HQ.png"
+    file_image = "quotidien_demande_HQ.png"
 
     # Obtenir les données sur le site HQ
     r = httpx.get(url)

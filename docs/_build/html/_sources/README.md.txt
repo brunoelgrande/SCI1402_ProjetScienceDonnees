@@ -22,6 +22,12 @@ Données historiques de demande en MW importées du [site d'Hydro-Québec](https
 
 ![Demande électrique pour les années importées](https://raw.githubusercontent.com/brunoelgrande/SCI1402_ProjetScienceDonnees/main/reports/figures/historique_demande_HQ.png)
 
+### Demande électrique journalière du dernier import quotidien
+
+Données quotidiennes de demande en MW importées du [site d'Hydro-Québec](https://www.hydroquebec.com/documents-donnees/donnees-ouvertes/demande-electricite-quebec/).
+
+![Demande électrique de la dernière journée importée](https://raw.githubusercontent.com/brunoelgrande/SCI1402_ProjetScienceDonnees/main/reports/figures/quotidien_demande_HQ.png)
+
 ## Organisation du projet
 
     ├── LICENSE

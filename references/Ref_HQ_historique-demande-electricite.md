@@ -1,34 +1,35 @@
-# Historique de la demande d’électricité au Québec - Hydro-Québec
+# Demande d'électricité au Québec - Hydro-Québec
+
+## Description
+
+Ensemble de données d’Hydro‑Québec sur la demande d’électricité au Québec en mégawatts. Mises à jour toutes les 15 minutes, elles montrent les variations du besoin quotidien d’électricité en fonction de l’heure de la journée.
+
+## Fichiers ou services
+
+[Demande d’électricité au Québec (fichier JSON)](https://www.hydroquebec.com/data/documents-donnees/donnees-ouvertes/json/demande.json)
 
 ## Information utile pour interpréter les données
 
-Les données ouvertes dans cet ensemble sont calculées en temps réel par le Centre de conduite du réseau d’Hydro‑Québec. Elles sont offertes à titre informatif et ne peuvent être utilisées comme données officielles.
-
-Les données officielles (transmises à la Régie de l’énergie du Québec) sont disponibles dans l’Historique des données de production et de consommation d’électricité au Québec.
-
-La demande d’électricité pour une heure correspond à la demande totale moyenne pendant cette heure.
-
-Les données sont établies à la fin du pas de temps. Par exemple : La demande moyenne horaire associée à 2019‑01‑01 2:00 est la moyenne des données collectées de 2019‑01‑01 1:05 à 2019‑01‑01 2:00.
+La demande d’électricité au Québec est calculée en temps réel par le Centre de conduite du réseau d’Hydro‑Québec.
 
 ## Description des libellés
 
 Les fichiers peuvent contenir des données textuelles (ex. : Montréal), numériques (ex. : 2021‑05‑21) ou géométriques (ex. : 46°48'44"). Elles sont organisées selon des libellés, qui correspondent à des catégories. Voici les libellés avec leur description.
 
 **date** : date et heure de la prise de mesure.
-**demande (MW) (numérique)** : demande totale moyenne d’électricité en mégawatts (MW).
+**demandeTotal (numérique)** : demande totale d’électricité en mégawatts (MW).
 
 ## Renseignements additionnels
 
 **Éditeur/Auteur** : Hydro‑Québec
-**Fréquence de mise à jour** : annuelle
-**Fréquence d’échantillonnage** : horaire
+**Fréquence de mise à jour** : 15 minutes
 **Langues** : français
 **Couverture géographique** : province du Québec, sauf les régions alimentées par des réseaux autonomes.
-**Couverture temporelle** : annuelle
-**Diffusion initiale** : 2023-04-05
+**Couverture temporelle** : journalière
+**Diffusion initiale** : 2021-05-01
 **Licence** : Creative Commons CC‑BY‑NC 4.0Ce lien mène à l'extérieur du site d'Hydro-Québec.
 **Notices et conditions d’utilisation** : Les données fournies sont brutes, sans garantie de qualité, et peuvent changer sans préavis.
 
 ## Source
 
-Consulté le 2023-11-12 : https://www.hydroquebec.com/documents-donnees/donnees-ouvertes/historique-demande-electricite-quebec/
+Consulté le 2023-11-13 : https://www.hydroquebec.com/documents-donnees/donnees-ouvertes/demande-electricite-quebec/
