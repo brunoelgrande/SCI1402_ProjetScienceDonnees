@@ -1,7 +1,6 @@
 name: run update_quotidien_demande_hq
 
 on:
-  push: # pour tester
   schedule:
     - cron: "30 1 * * *" # “At 01:30.”
 
@@ -42,7 +41,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git diff-index --quiet HEAD || (git commit -a -m "update automatique - demande quotidienne électricité" --allow-empty)
+          git diff-index --quiet HEAD || (git commit -a -m "maj automatique - demande quotidienne électricité" --allow-empty)
 
       - name: push changes
         uses: ad-m/github-push-action@master
