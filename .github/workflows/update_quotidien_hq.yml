@@ -37,15 +37,27 @@ jobs:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
         run: python src/data/quotidien_demande_hq.py
 
-      - name: commit files
+      - name: Commit files
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -a -m "update automatique - demande quotidienne"
 
-      - name: push changes
-        uses: ad-m/github-push-action@v0.6.0
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          branch: ${{ github.ref }}
+
+      # - name: commit files
+      #   run: |
+      #     git config --local user.email "action@github.com"
+      #     git config --local user.name "GitHub Action"
+      #     git add -A
+      #     git diff-index --quiet HEAD || (git commit -a -m "update demande quotidienne" --allow-empty)
+
+      # - name: push changes
+      #   uses: ad-m/github-push-action@v0.6.0
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     branch: main
