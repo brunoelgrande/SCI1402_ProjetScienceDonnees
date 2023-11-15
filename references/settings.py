@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Série de couleur utilisées pour les graphiques
 
 ## À importer tel que :
