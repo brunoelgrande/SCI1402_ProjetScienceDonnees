@@ -2,7 +2,6 @@ import os
 import pandas as pd
 import json
 import httpx
-from datetime import date
 import locale
 from pathlib import Path
 
@@ -14,7 +13,13 @@ plt.style.use("fivethirtyeight")
 col_HQ = "#FF9B00"
 
 
-def update_demande_quotidienne_HQ():
+def update_demande_quotidienne_HQ() -> pd.DataFrame:
+    """Création d'un fichier parquet et un graphique, contenant les dernières demandes horaires d'électricité
+       Import à partir du fichier quotidien d'HQ
+
+    Returns:
+        DataFrame: DataFrame avec la demande horaire ['date', 'MW']
+    """
     url = "https://www.hydroquebec.com/data/documents-donnees/donnees-ouvertes/json/demande.json"
 
     path_to_interim_data = os.path.join(Path(__file__).parents[2], "data/interim/")
