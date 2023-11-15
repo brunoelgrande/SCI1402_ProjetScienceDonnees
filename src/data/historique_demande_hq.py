@@ -115,8 +115,8 @@ def import_complet_donnees_historiques_HQ() -> None:
         if file.endswith(".xlsx"):
             df = (
                 pd.read_excel(os.path.join(data_path, file), engine="openpyxl")
-                .rename(columns={"Moyenne (MW)": "MW"})
-                .set_index("Date")
+                .rename(columns={"Date": "date", "Moyenne (MW)": "MW"})
+                .set_index("date")
             )
 
             dfs.append(df)
@@ -126,6 +126,7 @@ def import_complet_donnees_historiques_HQ() -> None:
     creation_grap_hist_HQ_import(dfs, file_to_save=os.path.join(img_path, file_image))
 
     demande = pd.concat(dfs)
+    demande.index.name = "date"
 
     demande.to_parquet(
         path=os.path.join(path_to_interim_data, file_parquet), engine="pyarrow"
