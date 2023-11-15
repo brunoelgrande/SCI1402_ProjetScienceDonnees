@@ -8,7 +8,7 @@ import math
 from datetime import timedelta
 from pathlib import Path
 
-from references.settings import colors_pal
+from references import colors_pal
 
 plt.style.use(style="fivethirtyeight")
 
