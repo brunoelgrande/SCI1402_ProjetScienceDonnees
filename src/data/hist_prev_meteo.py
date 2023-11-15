@@ -9,8 +9,8 @@ import matplotlib.pyplot as plt
 
 plt.style.use("fivethirtyeight")
 
-#from references import colors_pal
-import ...references
+# from references import colors_pal
+from references import colors_pal
 
 
 def get_meteo() -> pd.DataFrame:
