@@ -41,7 +41,7 @@ jobs:
         run: python src/data/quotidien_demande_hq.py
 
       - name: execute python script - metéo
-        run: python src/data/hist_prev_meteo.py
+        run: python -m references src/data/hist_prev_meteo.py
 
       - name: commit files
         run: |
