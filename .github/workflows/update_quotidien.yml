@@ -25,6 +25,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r .github/workflows/requirements_gh.txt
+          pip install -e .
 
       - name: set locale
         run: |
@@ -41,7 +42,7 @@ jobs:
         run: python src/data/quotidien_demande_hq.py
 
       - name: execute python script - metéo
-        run: python -m references src/data/hist_prev_meteo.py
+        run: python src/data/hist_prev_meteo.py
 
       - name: commit files
         run: |
