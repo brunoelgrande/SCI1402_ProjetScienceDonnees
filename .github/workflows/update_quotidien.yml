@@ -44,7 +44,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git diff-index --quiet HEAD || (git commit -a -m "maj automatique - demande quotidienne électricité" --allow-empty)
+          git diff-index --quiet HEAD || (git commit -a -m "maj automatique - demande électricité - météo" --allow-empty)
 
       - name: push changes
         uses: ad-m/github-push-action@master

@@ -28,6 +28,12 @@ Données quotidiennes de demande en MW importées du [site d'Hydro-Québec](http
 
 ![Demande électrique de la dernière journée importée](https://raw.githubusercontent.com/brunoelgrande/SCI1402_ProjetScienceDonnees/main/reports/figures/quotidien_demande_HQ.png)
 
+### Données Météo
+
+Utilisation de l'API de [Open-Météo](https://open-meteo.com/) pour obtenir la température en degré Celsius pour la période à l'étude de même que pour les prévisions des 16 prochaines jours.
+
+![Historique météo](https://raw.githubusercontent.com/brunoelgrande/SCI1402_ProjetScienceDonnees/main/reports/figures/hist_prev_meteo.png)
+
 ## Organisation du projet
 
     ├── LICENSE
