@@ -1,16 +1,12 @@
 name: MAJ quotidienne - demande hq et météo
 
 on:
-  push:
   schedule: # All the cron job in githubactions is in UTC.  1:30 -> 6:30;  15:30 -> 20:30
     - cron: "30 6 * * *"
     - cron: "30 20 * * *"
 
 jobs:
   build:
-    defaults:
-      run:
-        working-directory: ./
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
