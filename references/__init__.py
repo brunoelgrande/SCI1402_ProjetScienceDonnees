@@ -1,1 +1,1 @@
-from settings import *
+from references.settings import *

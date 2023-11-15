@@ -1,4 +1,1 @@
-from hist_prev_meteo import get_meteo
-from historique_demande_hq import import_complet_donnees_historiques_HQ
-from quotidien_demande_hq import update_demande_quotidienne_HQ
-from references import colors_pal
+
