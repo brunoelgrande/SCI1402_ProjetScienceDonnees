@@ -8,3 +8,5 @@ setup(
     author="Bruno Gauthier",
     license="MIT",
 )
+
+packages = ["references", "src/data"]

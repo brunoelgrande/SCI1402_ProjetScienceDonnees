@@ -6,6 +6,7 @@ from dotenv import find_dotenv, load_dotenv
 
 from historique_demande_hq import import_complet_donnees_historiques_HQ
 from quotidien_demande_hq import update_demande_quotidienne_HQ
+from hist_prev_meteo import get_meteo
 
 
 @click.command()
@@ -22,6 +23,9 @@ def main(input_filepath, output_filepath):
 
     logger.info("making données quotidiennes demande HQ du site web")
     update_demande_quotidienne_HQ()
+
+    logger.info("making données météo")
+    get_meteo()
 
     # logger.info("making final data set from raw data")
 
