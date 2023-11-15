@@ -9,4 +9,4 @@ setup(
     license="MIT",
 )
 
-packages = ["references", "src/data"]
+packages = ["references", "src", "src/data"]
