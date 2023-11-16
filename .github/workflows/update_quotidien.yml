@@ -1,6 +1,7 @@
 name: MAJ quotidienne - demande hq et météo
 
 on:
+  push:
   schedule: # All the cron job in githubactions is in UTC.  1:30 -> 6:30;  15:30 -> 20:30
     - cron: "30 6 * * *"
     - cron: "30 20 * * *"
@@ -39,6 +40,9 @@ jobs:
 
       - name: execute python script - metéo
         run: python src/data/hist_prev_meteo.py
+
+      - name: execute python script - regroupement demande et météo
+        run: python src/data/regroup_demande_meteo.py
 
       - name: commit files
         run: |
