@@ -34,6 +34,10 @@ Utilisation de l'API de [Open-Météo](https://open-meteo.com/) pour obtenir la 
 
 ![Historique météo](https://raw.githubusercontent.com/brunoelgrande/SCI1402_ProjetScienceDonnees/main/reports/figures/hist_prev_meteo.png)
 
+### Données combinées
+
+![Demande électrique en fonction de la météo](https://raw.githubusercontent.com/brunoelgrande/SCI1402_ProjetScienceDonnees/main/reports/figures/demande_vs_meteo.png)
+
 ## Organisation du projet
 
     ├── LICENSE
