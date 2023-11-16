@@ -8,6 +8,7 @@ from src import (
     import_complet_donnees_historiques_HQ,
     update_demande_quotidienne_HQ,
     get_meteo,
+    regroup_demande_meteo,
 )
 
 
@@ -28,6 +29,9 @@ def main(input_filepath, output_filepath):
 
     logger.info("making données météo")
     get_meteo()
+
+    logger.info("making données météo")
+    regroup_demande_meteo()
 
     # logger.info("making final data set from raw data")
 

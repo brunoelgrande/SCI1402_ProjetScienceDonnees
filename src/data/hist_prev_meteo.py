@@ -115,7 +115,7 @@ def get_meteo() -> pd.DataFrame:
     )
 
     print(
-        f"Le fichier de données météo possède maintenant {format(df.shape[0], ',d').replace(',',' ')} heures d'historiques et de prévisions."
+        f"\nLe fichier de données météo possède maintenant {format(df.shape[0], ',d').replace(',',' ')} heures d'historiques et de prévisions.\n"
     )
 
     return df

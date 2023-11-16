@@ -133,7 +133,7 @@ def import_complet_donnees_historiques_HQ() -> None:
     )
 
     print(
-        f"Import de {len(dfs)} fichier de données de demande d'életricité d'HQ terminé."
+        f"\nImport de {len(dfs)} fichier de données de demande d'életricité d'HQ terminé.\n"
     )
 
 

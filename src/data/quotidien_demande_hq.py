@@ -84,7 +84,7 @@ def update_demande_quotidienne_HQ() -> pd.DataFrame:
     )
 
     print(
-        f"Le fichier de données quotidiennes de la demande électrique possède maintenant {nouveau_df.shape[0]} heures."
+        f"\nLe fichier de données quotidiennes de la demande électrique possède maintenant {nouveau_df.shape[0]} heures.\n"
     )
 
     return nouveau_df
