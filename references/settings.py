@@ -17,6 +17,7 @@ colors_pal = [
     "#354823",
     "#0B775E",
     "#F2300F",
+    "#FF9B00",  # Couleur HQ - 11
 ]
 
 ## https://github.com/karthik/wesanderson   -- Package R

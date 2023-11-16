@@ -20,7 +20,7 @@ def plot_demande_temp(
     fig.set_figheight(8)
     fig.set_figwidth(15)
 
-    color = colors_pal[0]
+    color = colors_pal[11]
     ax1.set_xlabel("")
     ax1.set_ylabel("Demande (MW)", color=color)
     ax1.scatter(
