@@ -4,9 +4,11 @@ import logging
 from pathlib import Path
 from dotenv import find_dotenv, load_dotenv
 
-from historique_demande_hq import import_complet_donnees_historiques_HQ
-from quotidien_demande_hq import update_demande_quotidienne_HQ
-from hist_prev_meteo import get_meteo
+from src import (
+    import_complet_donnees_historiques_HQ,
+    update_demande_quotidienne_HQ,
+    get_meteo,
+)
 
 
 @click.command()
