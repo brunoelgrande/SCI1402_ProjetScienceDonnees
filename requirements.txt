@@ -24,6 +24,7 @@ seaborn
 pyarrow
 myst-parser
 autoviz
+statsmodels
 
 # backwards compatibility
 pathlib2
