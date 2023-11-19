@@ -11,9 +11,7 @@ plt.style.use("fivethirtyeight")
 from references import colors_pal
 
 
-def plot_demande_temp(
-    df: pd.DataFrame, path_to_img: str, file_image: str, fin_titre: str = ""
-) -> None:
+def plot_demande_temp(df: pd.DataFrame, fin_titre: str = "", **kwargs) -> None:
     alpha, size = 0.4, 8
 
     fig, ax1 = plt.subplots()
@@ -53,7 +51,14 @@ def plot_demande_temp(
 
     fig.tight_layout()
 
-    plt.savefig(os.path.join(path_to_img, file_image), dpi=300)
+    # Si nous voulons sauver le graph
+
+    if file_image := kwargs.get("file_image", False):
+        print(f"Sauvegardons le graphique : {file_image}\n")
+        plt.savefig(os.path.join(kwargs.get("path_to_img"), file_image), dpi=300)
+
+    else:
+        plt.show()
 
 
 def regroup_demande_meteo() -> pd.DataFrame:
