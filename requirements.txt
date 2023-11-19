@@ -23,6 +23,7 @@ matplotlib
 seaborn
 pyarrow
 myst-parser
+autoviz
 
 # backwards compatibility
 pathlib2
