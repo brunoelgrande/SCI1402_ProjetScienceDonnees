@@ -2,6 +2,7 @@ import pandas as pd
 import os
 from pathlib import Path
 
+
 import matplotlib.pyplot as plt
 
 plt.style.use("fivethirtyeight")
@@ -9,7 +10,7 @@ plt.style.use("fivethirtyeight")
 from references import colors_pal
 
 
-def plot_demande_temp(df: pd.DataFrame, fin_titre: str = "", **kwargs) -> None:
+def plot_demande_temp(df: pd.DataFrame, fin_titre: str = "", **kwargs):
     """Scatterplot de la température et demande MW en fonction du temps
 
     Args:
@@ -49,7 +50,7 @@ def plot_demande_temp(df: pd.DataFrame, fin_titre: str = "", **kwargs) -> None:
     ax2.tick_params(axis="y", labelcolor=color)
 
     plt.suptitle(
-        f'Demande électrique en fonction de la température{" - " if fin_titre != "" else ""}{fin_titre}',
+        f'Demande électrique et température dans le temps{" - " if fin_titre != "" else ""}{fin_titre}',
         y=0.95,
         fontsize=24,
     )
@@ -66,7 +67,7 @@ def plot_demande_temp(df: pd.DataFrame, fin_titre: str = "", **kwargs) -> None:
         plt.show()
 
 
-def line_demande_temp(df: pd.DataFrame, fin_titre: str = "", **kwargs) -> None:
+def line_demande_temp(df: pd.DataFrame, fin_titre: str = "", **kwargs):
     """Lineplot de la température et demande MW en fonction du temps
 
     Args:
@@ -104,7 +105,7 @@ def line_demande_temp(df: pd.DataFrame, fin_titre: str = "", **kwargs) -> None:
     ax2.tick_params(axis="y", labelcolor=color)
 
     plt.suptitle(
-        f'Demande électrique en fonction de la température{" - " if fin_titre != "" else ""}{fin_titre}',
+        f'Demande électrique et température dans le temps{" - " if fin_titre != "" else ""}{fin_titre}',
         y=0.95,
         fontsize=24,
     )
