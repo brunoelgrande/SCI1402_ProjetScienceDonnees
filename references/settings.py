@@ -20,6 +20,46 @@ colors_pal = [
     "#FF9B00",  # Couleur HQ - 11
 ]
 
+################################################################################
+
+# Références aux jours en mois comme données catégoriques
+
+from pandas.api.types import CategoricalDtype
+
+jours_cat_type = CategoricalDtype(
+    categories=[
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi",
+        "Samedi",
+        "Dimanche",
+    ],
+    ordered=True,
+)
+
+mois_cat_type = CategoricalDtype(
+    categories=[
+        "Janvier",
+        "Février",
+        "Mars",
+        "Avril",
+        "Mai",
+        "Juin",
+        "Juillet",
+        "Août",
+        "Septembre",
+        "Octobre",
+        "Novembre",
+        "Décembre",
+    ],
+    ordered=True,
+)
+
+
+################################################################################
+
 ## https://github.com/karthik/wesanderson   -- Package R
 # wes_palettes <- list(
 #   BottleRocket1 = c("#A42820", "#5F5647", "#9B110E", "#3F5151", "#4E2A1E", "#550307", "#0C1707"),
