@@ -16,7 +16,7 @@ pd.options.mode.chained_assignment = None
 locale.setlocale(category=locale.LC_ALL, locale="fr_CA.UTF-8")
 
 
-def import_data(dep="20190101", fin="20221231") -> pd.DataFrame:
+def import_data(dep="20181228", fin="20221231") -> pd.DataFrame:
     """
     Import des données avec dates actuellement disponibles
     """
@@ -159,7 +159,7 @@ def create_window_features(
 
 
 def import_and_create_features(
-    dep="20190101",
+    dep="20181228",  # Départ plus tôt pour permettre calcul lag / moy mobile sur Température
     fin="20221231",
     caract: [str] = ["Temp", "DT_18-21", "DT_16-24", "DT_18", "DT_21"],
     lags: [int] = [1, 2, 3, 4, 6, 24],
@@ -179,3 +179,4 @@ def import_and_create_features(
 
 if __name__ == "__main__":
     df = import_and_create_features()
+    print(df)
