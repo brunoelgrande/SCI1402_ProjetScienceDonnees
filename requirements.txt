@@ -25,6 +25,7 @@ pyarrow
 myst-parser
 autoviz
 statsmodels
+holidays
 
 # backwards compatibility
 pathlib2

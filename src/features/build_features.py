@@ -3,6 +3,8 @@ import numpy as np
 import os
 import locale
 import calendar
+import holidays
+from datetime import date
 from pathlib import Path
 from references import mois_cat_type, jours_cat_type
 
@@ -34,6 +36,14 @@ def create_date_features(df: pd.DataFrame) -> pd.DataFrame:
     """
     Création des features concernant les dates
     """
+
+    list_holidays = holidays.country_holidays(
+        country="CA",
+        subdiv="QC",
+        language="fr",
+        years=range(df.index[0].year, df.index[-1].year + 1),
+    )
+
     df = df.copy()
     df["date"] = df.index
     df["hourofday"] = df["date"].dt.hour
@@ -72,7 +82,7 @@ def create_date_features(df: pd.DataFrame) -> pd.DataFrame:
     )
 
     df["isWeekend"] = df["idx_Jour"].apply(lambda x: 1 if x in [5, 6] else 0)
-
+    df["isHoliday"] = df.date.apply(lambda date: 1 if date in list_holidays else 0)
     # Application d'un cycle sur la durée du jour et de l'année
     # [-1 : 1] avec sinus et cosinus
     day = 60 * 60 * 24
