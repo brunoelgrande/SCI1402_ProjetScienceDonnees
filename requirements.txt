@@ -26,6 +26,7 @@ myst-parser
 autoviz
 statsmodels
 holidays
+xgboost
 
 # backwards compatibility
 pathlib2
