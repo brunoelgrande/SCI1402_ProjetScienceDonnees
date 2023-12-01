@@ -82,7 +82,9 @@ def create_date_features(df: pd.DataFrame) -> pd.DataFrame:
     )
 
     df["isWeekend"] = df["idx_Jour"].apply(lambda x: 1 if x in [5, 6] else 0)
-    df["isHoliday"] = df.date.apply(lambda date: 1 if date in list_holidays else 0)
+    df["isHoliday"] = df.date.apply(
+        lambda date: 1 if date in list_holidays else 0
+    ).astype("int32")
     # Application d'un cycle sur la durée du jour et de l'année
     # [-1 : 1] avec sinus et cosinus
     day = 60 * 60 * 24
@@ -97,6 +99,68 @@ def create_date_features(df: pd.DataFrame) -> pd.DataFrame:
 
     # Éliminons les colonnes non requises
     df = df.drop(columns=["date", "Seconds", "date_offset", "idx_Jour", "idx_Mois"])
+
+    return df
+
+
+def find_season(jour: int) -> int:
+    spring = range(80, 172)
+    summer = range(172, 264)
+    fall = range(264, 355)
+
+    if jour in spring:
+        return 1
+    elif jour in summer:
+        return 2
+    elif jour in fall:
+        return 3
+    else:
+        return 4
+
+
+def create_date_features_no_categorical(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Création des features concernant les dates sans format 'categorie'
+    """
+
+    list_holidays = holidays.country_holidays(
+        country="CA",
+        subdiv="QC",
+        language="fr",
+        years=range(df.index[0].year, df.index[-1].year + 1),
+    )
+
+    df = df.copy()
+    df["date"] = df.index
+    df["hourofday"] = df["date"].dt.hour
+    df["quarter"] = df["date"].dt.quarter
+    df["year"] = df["date"].dt.year
+    df["dayofyear"] = df["date"].dt.dayofyear
+    df["dayofmonth"] = df["date"].dt.day
+    df["weekofyear"] = df["date"].dt.isocalendar().week.astype("int32")
+    df["month"] = df.index.month
+    df["dayofweek"] = df.index.dayofweek
+
+    df["season"] = df["dayofyear"].apply(find_season)
+
+    df["isWeekend"] = df["dayofweek"].apply(lambda x: 1 if x in [5, 6] else 0)
+    df["isHoliday"] = df.date.apply(
+        lambda date: 1 if date in list_holidays else 0
+    ).astype("int32")
+    # Application d'un cycle sur la durée du jour et de l'année
+    # [-1 : 1] avec sinus et cosinus
+    day = 60 * 60 * 24
+    year = 365.2425 * day
+
+    df["Seconds"] = df.index.map(pd.Timestamp.timestamp)
+
+    df["day_sin"] = np.sin(df["Seconds"] * (2 * np.pi / day))
+    df["day_cos"] = np.cos(df["Seconds"] * (2 * np.pi / day))
+    df["year_sin"] = np.sin(df["Seconds"] * (2 * np.pi / year))
+    df["year_cos"] = np.cos(df["Seconds"] * (2 * np.pi / year))
+
+    # Éliminons les colonnes non requises
+    df = df.drop(columns=["date", "Seconds"])
 
     return df
 
@@ -180,6 +244,25 @@ def import_and_create_features(
     """
     df = import_data(dep=dep, fin=fin)
     df = create_date_features(df=df)
+    df = create_deltaTemp_features(df=df)
+    df = create_lag_features(df=df, caract=caract, lags=lags)
+    df = create_window_features(df=df, caract=caract, fenetres=fenetres)
+
+    return df
+
+
+def import_and_create_features_no_categorical(
+    dep="20181228",  # Départ plus tôt pour permettre calcul lag / moy mobile sur Température
+    fin="20221231",
+    caract: [str] = ["Temp", "DT_18-21", "DT_16-24", "DT_18", "DT_21"],
+    lags: [int] = [1, 2, 3, 4, 6, 24],
+    fenetres: [int] = [1, 2, 3, 4, 6, 24],
+) -> pd.DataFrame:
+    """
+    Import des données intérimaires d'entrées et création des features pour le ML
+    """
+    df = import_data(dep=dep, fin=fin)
+    df = create_date_features_no_categorical(df=df)
     df = create_deltaTemp_features(df=df)
     df = create_lag_features(df=df, caract=caract, lags=lags)
     df = create_window_features(df=df, caract=caract, fenetres=fenetres)
