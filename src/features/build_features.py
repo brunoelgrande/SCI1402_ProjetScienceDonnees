@@ -18,7 +18,7 @@ pd.options.mode.chained_assignment = None
 locale.setlocale(category=locale.LC_ALL, locale="fr_CA.UTF-8")
 
 
-def import_data(dep="20181228", fin="20221231") -> pd.DataFrame:
+def import_data(dep="20181228", fin="22221231", getInfoDate: bool = False):
     """
     Import des données avec dates actuellement disponibles
     """
@@ -29,7 +29,17 @@ def import_data(dep="20181228", fin="20221231") -> pd.DataFrame:
         path=os.path.join(path_to_interim_data, file_parquet),
         engine="pyarrow",
     )
-    return df[dep:fin]
+
+    infoDate = {
+        "dateMin": df.index.min(),
+        "dateMax": df.index.max(),
+        "dateMaxMW": df["MW"].dropna().index[-1],
+    }
+
+    if getInfoDate:
+        return df, infoDate
+    else:
+        return df[dep:fin]
 
 
 def create_date_features(df: pd.DataFrame) -> pd.DataFrame:
@@ -234,42 +244,58 @@ def create_window_features(
 
 def import_and_create_features(
     dep="20181228",  # Départ plus tôt pour permettre calcul lag / moy mobile sur Température
-    fin="20221231",
+    fin="22221231",  # Date max par défaut
     caract: [str] = ["Temp", "DT_18-21", "DT_16-24", "DT_18", "DT_21"],
     lags: [int] = [1, 2, 3, 4, 6, 24],
     fenetres: [int] = [1, 2, 3, 4, 6, 24],
+    getInfoDate: bool = False,
 ) -> pd.DataFrame:
     """
     Import des données intérimaires d'entrées et création des features pour le ML
     """
-    df = import_data(dep=dep, fin=fin)
+    if getInfoDate:
+        df, InfoDate = import_data(dep=dep, fin=fin, getInfoDate=getInfoDate)
+    else:
+        df = import_data(dep=dep, fin=fin, getInfoDate=getInfoDate)
     df = create_date_features(df=df)
     df = create_deltaTemp_features(df=df)
     df = create_lag_features(df=df, caract=caract, lags=lags)
     df = create_window_features(df=df, caract=caract, fenetres=fenetres)
 
-    return df
+    if getInfoDate:
+        return df, InfoDate
+    else:
+        return df
 
 
 def import_and_create_features_no_categorical(
     dep="20181228",  # Départ plus tôt pour permettre calcul lag / moy mobile sur Température
-    fin="20221231",
+    fin="22221231",  # Date max par défaut
     caract: [str] = ["Temp", "DT_18-21", "DT_16-24", "DT_18", "DT_21"],
     lags: [int] = [1, 2, 3, 4, 6, 24],
     fenetres: [int] = [1, 2, 3, 4, 6, 24],
+    getInfoDate: bool = False,
 ) -> pd.DataFrame:
     """
     Import des données intérimaires d'entrées et création des features pour le ML
     """
-    df = import_data(dep=dep, fin=fin)
+    if getInfoDate:
+        df, InfoDate = import_data(dep=dep, fin=fin, getInfoDate=getInfoDate)
+    else:
+        df = import_data(dep=dep, fin=fin, getInfoDate=getInfoDate)
+
     df = create_date_features_no_categorical(df=df)
     df = create_deltaTemp_features(df=df)
     df = create_lag_features(df=df, caract=caract, lags=lags)
     df = create_window_features(df=df, caract=caract, fenetres=fenetres)
 
-    return df
+    if getInfoDate:
+        return df, InfoDate
+    else:
+        return df
 
 
 if __name__ == "__main__":
-    df = import_and_create_features()
+    df, InfoDate = import_and_create_features_no_categorical(getInfoDate=True)
+    print(InfoDate)
     print(df)
