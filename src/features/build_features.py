@@ -37,7 +37,7 @@ def import_data(dep="20181228", fin="22221231", getInfoDate: bool = False):
     }
 
     if getInfoDate:
-        return df, infoDate
+        return df[dep:fin], infoDate
     else:
         return df[dep:fin]
 
