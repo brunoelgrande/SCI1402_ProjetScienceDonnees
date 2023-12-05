@@ -27,6 +27,7 @@ autoviz
 statsmodels
 holidays
 xgboost
+# prophet  # test seulement
 
 # backwards compatibility
 pathlib2
