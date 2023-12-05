@@ -3,3 +3,4 @@ pandas
 pyarrow
 matplotlib
 holidays
+rich
