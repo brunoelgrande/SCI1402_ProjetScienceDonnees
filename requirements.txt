@@ -28,6 +28,10 @@ statsmodels
 holidays
 xgboost
 # prophet  # test seulement
+scikit-learn 
+scipy 
+matplotlib
+
 
 # backwards compatibility
 pathlib2

@@ -4,3 +4,6 @@ pyarrow
 matplotlib
 holidays
 rich
+scikit-learn 
+scipy 
+matplotlib
