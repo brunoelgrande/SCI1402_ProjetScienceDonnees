@@ -109,17 +109,12 @@ def objective(trial):
 
 
 if __name__ == "__main__":
-    path_to_models = os.path.join(Path(__file__).parents[2], "models")
-    file_model = "optuna_best_model.json"
-    path = os.path.join(path_to_models, file_model)
-
-    n_trials = 10
+    n_trials = 500
 
     (
         df,
         InfoDates,
     ) = import_and_create_features_no_categorical(
-        fenetres=[1, 2, 3, 4, 6, 8, 12, 16, 24],
         fin="20221231",
         getInfoDate=True,
     )
@@ -168,6 +163,7 @@ if __name__ == "__main__":
         objective="reg:squarederror",
         tree_method="auto",
         predictor="cpu_predictor",
+        early_stopping_rounds=250,
     )
 
     reg_best.fit(
@@ -176,5 +172,9 @@ if __name__ == "__main__":
         eval_set=[(X_train, y_train), (X_test, y_test)],
         verbose=250,
     )
+
+    path_to_models = os.path.join(Path(__file__).parents[2], "models")
+    file_model = "optuna_best_model.json"
+    path = os.path.join(path_to_models, file_model)
 
     reg_best.save_model(path)

@@ -19,6 +19,7 @@ path = os.path.join(path_to_models, file_model)
 loaded_reg = xgb.XGBRegressor()
 loaded_reg.load_model(path)
 
+print(loaded_reg.base_score)
 
 # DF avec données historiques + 16 jours de prédictions de températures
 (df_all_time, InfoDates) = import_and_create_features_no_categorical(getInfoDate=True)
