@@ -222,7 +222,7 @@ def create_lag_features(
 def create_window_features(
     df: pd.DataFrame,
     caract: [str] = ["Temp", "DT_18-21", "DT_16-24", "DT_18", "DT_21"],
-    fenetres: [int] = [1, 2, 3, 4, 6, 24],
+    fenetres: [int] = [1, 2, 3, 4, 6, 8, 12, 16, 24],
 ) -> pd.DataFrame:
     """
     Création des caractéristiques avec moyenne mobile (rolling windows)
@@ -247,7 +247,7 @@ def import_and_create_features(
     fin="22221231",  # Date max par défaut
     caract: [str] = ["Temp", "DT_18-21", "DT_16-24", "DT_18", "DT_21"],
     lags: [int] = [1, 2, 3, 4, 6, 24],
-    fenetres: [int] = [1, 2, 3, 4, 6, 24],
+    fenetres: [int] = [1, 2, 3, 4, 6, 8, 12, 16, 24],
     getInfoDate: bool = False,
 ) -> pd.DataFrame:
     """
@@ -273,7 +273,7 @@ def import_and_create_features_no_categorical(
     fin="22221231",  # Date max par défaut
     caract: [str] = ["Temp", "DT_18-21", "DT_16-24", "DT_18", "DT_21"],
     lags: [int] = [1, 2, 3, 4, 6, 24],
-    fenetres: [int] = [1, 2, 3, 4, 6, 24],
+    fenetres: [int] = [1, 2, 3, 4, 6, 8, 12, 16, 24],
     getInfoDate: bool = False,
 ) -> pd.DataFrame:
     """
