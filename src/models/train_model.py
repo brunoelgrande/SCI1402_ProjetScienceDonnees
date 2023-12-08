@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import xgboost as xgb
 import os
 import optuna
 import warnings
@@ -9,10 +10,7 @@ from rich import print
 from datetime import date
 from references import *
 from src import *
-from rich import print
 
-import xgboost as xgb
-import os
 from pathlib import Path
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error as mae
@@ -112,7 +110,7 @@ def objective(trial):
 
 if __name__ == "__main__":
     path_to_models = os.path.join(Path(__file__).parents[2], "models")
-    file_model = "train_model.json"
+    file_model = "optuna_best_model.json"
     path = os.path.join(path_to_models, file_model)
 
     n_trials = 10
@@ -135,10 +133,10 @@ if __name__ == "__main__":
         f"Nous avons {len(FEATURES)} caractéristiques dans le modèle après la création de celles-ci."
     )
 
-    date_slit = "2022-01-01"
+    date_split = "2022-01-01"
 
-    train = df.iloc[df.index < date_slit]
-    test = df.iloc[df.index >= date_slit]
+    train = df.iloc[df.index < date_split]
+    test = df.iloc[df.index >= date_split]
 
     X_train = train[FEATURES]
     y_train = train[TARGET]
