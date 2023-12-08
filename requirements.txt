@@ -31,7 +31,7 @@ xgboost
 scikit-learn 
 scipy 
 matplotlib
-
+optuna
 
 # backwards compatibility
 pathlib2

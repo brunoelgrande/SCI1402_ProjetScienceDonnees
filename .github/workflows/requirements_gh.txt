@@ -7,3 +7,5 @@ rich
 scikit-learn 
 scipy 
 matplotlib
+
+#optuna
