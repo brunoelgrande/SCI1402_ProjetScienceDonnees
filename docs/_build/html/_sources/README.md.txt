@@ -14,6 +14,12 @@ Ces données serviront à produire un modèle d’apprentissage machine adapté 
 
 Finalement, j'utiliserai un cadre d'application (_app framwork_) interactif permettant à un utilisateur d’interagir avec certains paramètres du modèle avec d'effectuer des prévisions à court terme sur la prévision de demande électrique, de même que d'en visualiser les résultats. Un exemple de ce cadre pourrait être la plate-forme [Streamlit](https://streamlit.io/).
 
+## Prédictions
+
+Les prédictions du modèle optimisé avec [XGBoost](https://github.com/dmlc/xgboost) et [Optuna](https://optuna.org) sont présentées dans ce graphique.
+
+![Demande électrique prédite et réelle](https://raw.githubusercontent.com/brunoelgrande/SCI1402_ProjetScienceDonnees/main/reports/figures/predictions_depuis_import.png)
+
 ## Données
 
 ### Demande électrique horaire pour l'année 2019 et les suivantes

@@ -51,6 +51,11 @@
 <p>Ces données serviront à produire un modèle d’apprentissage machine adapté aux données temporelles (<em>time series</em>), pour effectuer des prévisions de la demande électrique dans le futur à court terme. Plusieurs options de modèles seront évaluées dans cette étape, afin de déterminer une option offrant des résultats répondant à nos besoins de prévisions et visualisations.</p>
 <p>Finalement, j’utiliserai un cadre d’application (<em>app framwork</em>) interactif permettant à un utilisateur d’interagir avec certains paramètres du modèle avec d’effectuer des prévisions à court terme sur la prévision de demande électrique, de même que d’en visualiser les résultats. Un exemple de ce cadre pourrait être la plate-forme <a class="reference external" href="https://streamlit.io/">Streamlit</a>.</p>
 </section>
+<section id="predictions">
+<h2>Prédictions<a class="headerlink" href="#predictions" title="Link to this heading">¶</a></h2>
+<p>Les prédictions du modèle optimisé avec <a class="reference external" href="https://github.com/dmlc/xgboost">XGBoost</a> et <a class="reference external" href="https://optuna.org">Optuna</a> sont présentées dans ce graphique.</p>
+<p><img alt="Demande électrique prédite et réelle" src="https://raw.githubusercontent.com/brunoelgrande/SCI1402_ProjetScienceDonnees/main/reports/figures/predictions_depuis_import.png" /></p>
+</section>
 <section id="donnees">
 <h2>Données<a class="headerlink" href="#donnees" title="Link to this heading">¶</a></h2>
 <section id="demande-electrique-horaire-pour-l-annee-2019-et-les-suivantes">
@@ -138,6 +143,7 @@
     <ul>
 <li><a class="reference internal" href="#">SCI1402 Projet en Science des Données</a><ul>
 <li><a class="reference internal" href="#objectifs">Objectifs</a></li>
+<li><a class="reference internal" href="#predictions">Prédictions</a></li>
 <li><a class="reference internal" href="#donnees">Données</a><ul>
 <li><a class="reference internal" href="#demande-electrique-horaire-pour-l-annee-2019-et-les-suivantes">Demande électrique horaire pour l’année 2019 et les suivantes</a></li>
 <li><a class="reference internal" href="#demande-electrique-journaliere-du-dernier-import-quotidien">Demande électrique journalière du dernier import quotidien</a></li>
