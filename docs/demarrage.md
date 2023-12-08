@@ -7,3 +7,11 @@ L'approche à privilégier est d'installer via un `Makefile` dans un environneme
 Utiliser la commande suivante pour démarrer :
 
 `make create_environment`
+
+Puis, pour activer le nouvel environnement :
+
+`conda activate sci1402`
+
+Et installer l'ensemble des packages pip :
+
+`make requirements`

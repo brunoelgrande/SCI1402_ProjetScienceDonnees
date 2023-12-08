@@ -20,8 +20,6 @@ from sklearn.metrics import mean_squared_error as mse
 
 warnings.filterwarnings(action="ignore")
 
-print("Version XGBoost :", xgb.__version__)
-
 
 def calcul_erreurs(df: pd.DataFrame, nomColPrediction: str, nomColReel: str) -> dict:
     """Calcul et impressions d'erreurs sur un dataframe contenant les prédictions du modèle:
