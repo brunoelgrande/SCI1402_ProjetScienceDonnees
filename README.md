@@ -18,7 +18,7 @@ Finalement, j'utiliserai un cadre d'application (_app framwork_) interactif perm
 
 Les prédictions du modèle optimisé avec [XGBoost](https://github.com/dmlc/xgboost) et [Optuna](https://optuna.org) sont présentées dans ce graphique.
 
-![Demande électrique prédite et réelle](https://raw.githubusercontent.com/brunoelgrande/SCI1402_ProjetScienceDonnees/main/reports/figures/predictions_depuis_import.png)
+![Demande électrique prédite et réelle](https://raw.githubusercontent.com/brunoelgrande/SCI1402_ProjetScienceDonnees/main/reports/figures/predictions.png)
 
 ## Données
 
