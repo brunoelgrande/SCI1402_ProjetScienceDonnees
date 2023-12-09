@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 import xgboost as xgb
 import os
 import optuna
@@ -14,8 +15,6 @@ from pathlib import Path
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error as mae
 from sklearn.metrics import mean_squared_error as mse
-
-warnings.filterwarnings(action="ignore")
 
 
 def calcul_erreurs(df: pd.DataFrame, nomColPrediction: str, nomColReel: str) -> dict:
