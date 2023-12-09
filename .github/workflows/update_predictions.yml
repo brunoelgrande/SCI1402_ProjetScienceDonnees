@@ -1,7 +1,6 @@
 name: MAJ quotidienne - graphique prédictions
 
 on:
-  push:
   schedule: # All the cron job in githubactions is in UTC.  1:45 -> 6:45;
     - cron: "45 6 * * *"
 
