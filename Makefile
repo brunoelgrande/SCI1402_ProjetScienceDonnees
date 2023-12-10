@@ -30,6 +30,10 @@ requirements: test_environment
 data: requirements
 	$(PYTHON_INTERPRETER) src/data/make_dataset.py data/raw data/processed
 
+## Make Predictions
+predictions: requirements
+	$(PYTHON_INTERPRETER) src/models/predict_model.py
+
 ## Delete all compiled Python files
 clean:
 	find . -type f -name "*.py[co]" -delete
@@ -60,6 +64,10 @@ endif
 ## Test python environment is setup correctly
 test_environment:
 	$(PYTHON_INTERPRETER) test_environment.py
+
+## Run Streamlit app locally on port 8501
+run_streamlit:
+	streamlit run app/app.py --server.port 8501
 
 #################################################################################
 # PROJECT RULES                                                                 #

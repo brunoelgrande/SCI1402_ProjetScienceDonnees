@@ -27,11 +27,15 @@ autoviz
 statsmodels
 holidays
 xgboost
-# prophet  # test seulement
 scikit-learn 
 scipy 
 matplotlib
 optuna
+streamlit==1.29.0
+watchdog
 
-# backwards compatibility
+### Tests  ###
+# prophet
+
+### Backwards compatibility ###
 pathlib2

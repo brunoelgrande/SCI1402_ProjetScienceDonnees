@@ -20,6 +20,12 @@ colors_pal = [
     "#FF9B00",  # Couleur HQ - 11
 ]
 
+# Sélection de couleurs
+col_demande_relle = colors_pal[11]
+col_demande_predite = colors_pal[9]
+col_temperature = colors_pal[4]
+
+
 ################################################################################
 
 # Références aux jours en mois comme données catégoriques
@@ -56,7 +62,6 @@ mois_cat_type = CategoricalDtype(
     ],
     ordered=True,
 )
-
 
 ################################################################################
 

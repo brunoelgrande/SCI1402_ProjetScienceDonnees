@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 
 from src import *
-from references import mois_cat_type
+from references import *
 from rich import print
 
 ################################################################################
@@ -48,6 +48,7 @@ def save_graph_prediction(
         ls="--",
         xlabel="",
         ylabel="MW",
+        color=col_demande_predite,
     )
 
     df["MW"].plot(
@@ -56,6 +57,7 @@ def save_graph_prediction(
         lw=1,
         label="Demande réelle",
         xlabel="",
+        color=col_demande_relle,
     )
 
     ax.axvline(
