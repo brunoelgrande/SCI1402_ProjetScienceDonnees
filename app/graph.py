@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 from src import *
-from fonctions import st_make_list_evenement_pointe
 from references import *
 from datetime import datetime, time
 

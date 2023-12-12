@@ -4,7 +4,6 @@ import xgboost as xgb
 import os
 
 from src import *
-from src.models.predict_model import make_predictions
 from references import *
 from pathlib import Path
 
