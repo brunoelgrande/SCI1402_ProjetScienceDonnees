@@ -32,10 +32,12 @@ st.markdown(
 with st.spinner("Chargement du modèle et des données...."):
     model = st_load_model()
     df, FEATURES = st_load_data_features()
-    df = st_make_predictions(df=df, model=model, FEATURES=FEATURES)
+    df = st_make_predictions(df=df, _model=model, FEATURES=FEATURES)
 
     startDate = [df.index.date[0].year, df.index.date[0].month, df.index.date[0].day]
     endDate = [df.index.date[-1].year, df.index.date[-1].month, df.index.date[-1].day]
+
+    df_pointe = st_make_df_evenement_pointe()
 
 
 ################################################################################
@@ -91,6 +93,7 @@ st.pyplot(
     )
 )
 
+################################################################################
 
 st.header("Prévision des prochaines périodes de pointe")
 
@@ -105,11 +108,25 @@ st.markdown(
 """
 )
 
+(jours_pointe_matin, jours_pointe_soir) = st_make_list_evenement_pointe(
+    df=df_pointe,
+    pointeBascule=pointe_utilisateur,
+)
+
 
 st.markdown(
-    """
-        - [ ] TODO : Faire graphique avec prédictions seulements + zone grisées autour des période ayant potentiellement un évènement de pointes
-        - [ ] TODO : ajout d'une ligne horizontale à la valeur de `pointe_utilisateur`.
-        - Tableau et graphique
+    f"""
+        - [ ] Tableau et graphique
         """
+)
+
+
+st.pyplot(
+    fig=graph_evenement_pointe(
+        df=df_pointe,
+        jours_pointe_matin=jours_pointe_matin,
+        jours_pointe_soir=jours_pointe_soir,
+        pointeBascule=pointe_utilisateur,
+        withTemperature=choice_showTemp,
+    )
 )

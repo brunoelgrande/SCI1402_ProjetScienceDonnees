@@ -4,6 +4,7 @@ import xgboost as xgb
 import os
 
 from src import *
+from src.models.predict_model import make_predictions
 from references import *
 from pathlib import Path
 
@@ -44,14 +45,49 @@ def st_load_data_features() -> tuple:
     return df_all_time, FEATURES
 
 
+@st.cache_resource
 def st_make_predictions(
     df: pd.DataFrame,
-    model: xgb.XGBRegressor,
+    _model: xgb.XGBRegressor,
     FEATURES: list,
 ) -> pd.DataFrame:
-    df["prediction"] = model.predict(
+    df["prediction"] = _model.predict(
         X=df[FEATURES],
-        iteration_range=(0, model.best_iteration + 1),
+        iteration_range=(0, _model.best_iteration + 1),
     )
 
     return df
+
+
+@st.cache_resource
+def st_make_df_evenement_pointe() -> pd.DataFrame:
+    df = make_predictions(onlyFuture=True)
+
+    df = df.rename(columns={"pred": "prediction"})
+
+    return df
+
+
+@st.cache_resource
+def st_make_list_evenement_pointe(
+    df: pd.DataFrame,
+    pointeBascule: float = 32_000,
+):
+    df["date"] = df.index.date
+    df = df[["date", "hourofday", "prediction", "Temp"]]
+
+    heures_AM = [6, 7, 8, 9]
+    heures_PM = [16, 17, 18, 19, 20]
+
+    df["isHeureAM"] = df.hourofday.apply(lambda x: x in heures_AM)
+    df["isHeurePM"] = df.hourofday.apply(lambda x: x in heures_PM)
+    df["isSupBascule"] = df.prediction.apply(lambda x: x >= pointeBascule)
+
+    jours_pointe_matin = pd.unique(
+        df.query("isHeureAM and isSupBascule")["date"]
+    ).tolist()
+    jours_pointe_soir = pd.unique(
+        df.query("isHeurePM and isSupBascule")["date"]
+    ).tolist()
+
+    return (jours_pointe_matin, jours_pointe_soir)
