@@ -1,4 +1,4 @@
-import pandas as pandas
+import pandas as pd
 import streamlit as st
 import xgboost as xgb
 import os

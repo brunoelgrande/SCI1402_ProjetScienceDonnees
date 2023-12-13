@@ -1,8 +1,6 @@
 import pandas as pandas
 import streamlit as st
 
-# from datetime import datetime, date
-from src import *
 from references import *
 from fonctions import *
 from graph import *
