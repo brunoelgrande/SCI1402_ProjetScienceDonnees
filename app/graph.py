@@ -135,7 +135,7 @@ def graph_evenement_pointe(
         fig.set_figwidth(15)
 
         fig.suptitle(
-            f"Prédiction des évènements de pointe",
+            f"Prévision des évènements de pointe",
             ha="center",
             y=1.01,
             fontsize=32,

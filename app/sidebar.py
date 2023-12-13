@@ -83,7 +83,7 @@ def sidebar_dateInput(startDate, endDate) -> tuple():
 def sidebar_pointeMW_input():
     try:
         pointe_utilisateur = st.slider(
-            label="Sélectionner la demande minimale pour un évènement de pointe (10³ MW)",
+            label="Sélectionner la demande minimale pour déterminer un évènement de pointe (10³ MW)",
             value=32.0,
             min_value=25.0,
             max_value=40.0,
