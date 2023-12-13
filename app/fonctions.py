@@ -44,7 +44,6 @@ def st_load_data_features() -> tuple:
     return df_all_time, FEATURES
 
 
-@st.cache_resource
 def st_make_predictions(
     df: pd.DataFrame,
     _model: xgb.XGBRegressor,
@@ -58,7 +57,6 @@ def st_make_predictions(
     return df
 
 
-@st.cache_resource
 def st_make_df_evenement_pointe() -> pd.DataFrame:
     df = make_predictions(onlyFuture=True)
 
@@ -67,7 +65,6 @@ def st_make_df_evenement_pointe() -> pd.DataFrame:
     return df
 
 
-@st.cache_resource
 def st_make_list_evenement_pointe(
     df: pd.DataFrame,
     pointeBascule: float = 32_000,
