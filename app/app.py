@@ -11,19 +11,23 @@ st.set_page_config(layout="wide", page_title="Prédiction de la demande électri
 ################################################################################
 #### Contenu de l'entête ####
 
-st.title("Prédiction de la demande électrique")
+head1, head2 = st.columns([1, 3])
 
-st.markdown(
+head1.image("././img/logo.png")
+
+head2.title("Prédiction de la demande électrique")
+
+head2.markdown(
     """
             ### Modèle de prédiction de la demande électrique au Québec pour les prochains jours  
 
             Présentation d'un modèle de prévision conçu dans le cadre du cours [SCI1402 - Projet en science des données](https://www.teluq.ca/site/etudes/offre/cours/TELUQ/SCI%201402/) de la [TELUQ](https://www.teluq.ca/) à l'automne 2023.
             
             Ce modèle a été réalisé avec la librairie d'apprentissage machine [XGBoost](https://xgboost.readthedocs.io/en/stable) et le cadre d'optimisation [Optuna](https://optuna.org/) sur les données rendus disponibles par :orange[**Hydro-Québec**] sur leur de [données ouvertes](https://www.hydroquebec.com/documents-donnees/donnees-ouvertes/demande-electricite-quebec/).
-
-            ---
             """
 )
+
+st.markdown("---")
 
 ################################################################################
 
@@ -78,7 +82,7 @@ st.markdown(
     """
         Le modèle d'apprentissage machine est en mesure de réaliser des prédictions sur la **demande électrique à venir** au Québec, mais aussi sur des données historiques (à partir de 2019). 
 
-        Vous pouvez ajuster les dates et ajouter la température en surimpression dans le panneau latéral. 
+        Vous pouvez **ajuster les dates** et **ajouter la température** en surimpression dans le panneau latéral. 
 
 """
 )
