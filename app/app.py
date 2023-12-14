@@ -19,7 +19,7 @@ head2.title("Prédiction de la demande électrique")
 
 head2.markdown(
     """
-            ### Modèle de prédiction de la demande électrique au Québec pour les prochains jours  
+            ### Modèle de prédiction à court terme de la demande électrique au Québec
 
             Présentation d'un modèle de prévision conçu dans le cadre du cours [SCI1402 - Projet en science des données](https://www.teluq.ca/site/etudes/offre/cours/TELUQ/SCI%201402/) de la [TELUQ](https://www.teluq.ca/) à l'automne 2023.
             
@@ -80,7 +80,7 @@ st.header("Graphique des prédictions")
 
 st.markdown(
     """
-        Le modèle d'apprentissage machine est en mesure de réaliser des prédictions sur la **demande électrique à venir** au Québec, mais aussi sur des données historiques (à partir de 2019). 
+        Le modèle d'apprentissage machine est en mesure de réaliser des prédictions sur la **demande électrique des 16 prochaines jours** au Québec, mais aussi sur des données historiques (à partir de 2019). 
 
         Vous pouvez **ajuster les dates** et **ajouter la température** en surimpression dans le panneau latéral. 
 
