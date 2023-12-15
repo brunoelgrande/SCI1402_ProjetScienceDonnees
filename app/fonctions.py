@@ -8,7 +8,7 @@ from references import *
 from pathlib import Path
 
 
-@st.cache_resource
+@st.cache_resource(ttl="1d")
 def st_load_model() -> xgb.XGBRegressor:
     # Fichier du modèle
     path_to_models = os.path.join(Path(__file__).parents[1], "models")
@@ -21,6 +21,7 @@ def st_load_model() -> xgb.XGBRegressor:
     return model
 
 
+@st.cache_resource(ttl="1h")
 def st_load_data_features() -> tuple:
     # DF avec données historiques + 16 jours de prédictions de températures
     (df_all_time, InfoDates) = import_and_create_features_no_categorical(
@@ -44,6 +45,7 @@ def st_load_data_features() -> tuple:
     return df_all_time, FEATURES
 
 
+@st.cache_resource(ttl="1h")
 def st_make_predictions(
     df: pd.DataFrame,
     _model: xgb.XGBRegressor,
@@ -57,6 +59,7 @@ def st_make_predictions(
     return df
 
 
+@st.cache_resource(ttl="1h")
 def st_make_df_evenement_pointe() -> pd.DataFrame:
     df = make_predictions(onlyFuture=True)
 
@@ -65,6 +68,7 @@ def st_make_df_evenement_pointe() -> pd.DataFrame:
     return df
 
 
+@st.cache_resource(ttl="1h")
 def st_make_list_evenement_pointe(
     df: pd.DataFrame,
     pointeBascule: float = 32_000,
