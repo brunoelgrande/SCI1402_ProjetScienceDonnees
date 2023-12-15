@@ -12,7 +12,9 @@ Tout d'abord, il sera requis d'effectuer l’agrégation, le nettoyage et l'anal
 
 Ces données serviront à produire un modèle d’apprentissage machine adapté aux données temporelles (_time series_), pour effectuer des prévisions de la demande électrique dans le futur à court terme. Plusieurs options de modèles seront évaluées dans cette étape, afin de déterminer une option offrant des résultats répondant à nos besoins de prévisions et visualisations.
 
-Finalement, j'utiliserai un cadre d'application (_app framwork_) interactif permettant à un utilisateur d’interagir avec certains paramètres du modèle avec d'effectuer des prévisions à court terme sur la prévision de demande électrique, de même que d'en visualiser les résultats. Un exemple de ce cadre pourrait être la plate-forme [Streamlit](https://streamlit.io/).
+Finalement, j'utiliserai un cadre d'application (_app framwork_) interactif permettant à un utilisateur d’interagir avec certains paramètres du modèle avec d'effectuer des prévisions à court terme sur la prévision de demande électrique, de même que d'en visualiser les résultats. 
+
+**Cette visualisation est disponible ici : [https://sci1402projetsciencedonnees.streamlit.app/](https://sci1402projetsciencedonnees.streamlit.app/)**
 
 ## Prédictions
 
