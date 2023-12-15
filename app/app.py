@@ -23,7 +23,7 @@ head2.markdown(
 
             Présentation d'un modèle de prévision conçu dans le cadre du cours [SCI1402 - Projet en science des données](https://www.teluq.ca/site/etudes/offre/cours/TELUQ/SCI%201402/) de la [TELUQ](https://www.teluq.ca/) à l'automne 2023.
             
-            Ce modèle a été réalisé avec la librairie d'apprentissage machine [XGBoost](https://xgboost.readthedocs.io/en/stable) et le cadre d'optimisation [Optuna](https://optuna.org/) sur les données rendus disponibles par :orange[**Hydro-Québec**] sur leur de [données ouvertes](https://www.hydroquebec.com/documents-donnees/donnees-ouvertes/demande-electricite-quebec/).
+            Ce modèle a été réalisé avec la librairie d'apprentissage machine [XGBoost](https://xgboost.readthedocs.io/en/stable) et le cadre d'optimisation [Optuna](https://optuna.org/) sur les données rendus disponibles par :orange[**Hydro-Québec**] sur leur page web de [données ouvertes](https://www.hydroquebec.com/documents-donnees/donnees-ouvertes/demande-electricite-quebec/).
             """
 )
 
@@ -158,7 +158,7 @@ st.pyplot(
 st.markdown("---")
 st.markdown(
     """
-    Une réalisation de :blue[**Bruno Gauthier**] avec un code libre de droits disponible sur [**Github.**](https://github.com/brunoelgrande/SCI1402_ProjetScienceDonnees) 
+    Une réalisation de :blue[**Bruno Gauthier**] avec un code disponible sur [**Github.**](https://github.com/brunoelgrande/SCI1402_ProjetScienceDonnees) 
     """,
     unsafe_allow_html=True,
 )
