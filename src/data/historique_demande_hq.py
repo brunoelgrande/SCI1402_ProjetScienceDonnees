@@ -22,24 +22,25 @@ def creation_grap_hist_HQ_import(dfs, **kwargs) -> None:
     # Nous voulons 2 colonnes par nb_rangees
     nb_rangees = math.ceil(len(dfs) / 2)
 
-    fig, axs = plt.subplots(ncols=2, nrows=nb_rangees, figsize=(16, 8))
+    fig, axs = plt.subplots(ncols=2, nrows=nb_rangees, figsize=(16, 4* nb_rangees))
 
     index_dfs = 0
 
     for row in range(nb_rangees):
         for col in range(2):
-            axs[row, col].plot(
-                dfs[index_dfs],
-                color=colors_pal[index_dfs % len(colors_pal)],
-                linewidth=0.5,
-                linestyle="-",
-                alpha=0.75,
-            )
-            axs[row, col].set_title(
-                f"Demande Électricité HQ - {dfs[index_dfs].index[0].year}", fontsize=14
-            )
-            axs[row, col].set_xlabel("")
-            axs[row, col].set_ylabel("MW", fontsize=14)
+            if index_dfs < len(dfs):
+                axs[row, col].plot(
+                    dfs[index_dfs],
+                    color=colors_pal[index_dfs % len(colors_pal)],
+                    linewidth=0.5,
+                    linestyle="-",
+                    alpha=0.75,
+                )
+                axs[row, col].set_title(
+                    f"Demande Électricité HQ - {dfs[index_dfs].index[0].year}", fontsize=14
+                )
+                axs[row, col].set_xlabel("")
+                axs[row, col].set_ylabel("MW", fontsize=14)
             index_dfs += 1
 
     fig.suptitle(
