@@ -22,6 +22,10 @@ Les prédictions du modèle optimisé avec [XGBoost](https://github.com/dmlc/xgb
 
 ![Demande électrique prédite et réelle](https://raw.githubusercontent.com/brunoelgrande/SCI1402_ProjetScienceDonnees/main/reports/figures/predictions.png)
 
+## Mises à jour 
+
+Les données historiques de la demande d'HQ 2023 ont été intégrées à partir du **27 juin 2024**.
+
 ## Données
 
 ### Demande électrique horaire pour l'année 2019 et les suivantes
